@@ -64,21 +64,6 @@ class Localup < Formula
     end
   end
 
-  on_windows do
-    url "https://github.com/localup-dev/localup/releases/download/v0.0.1-beta13/localup-windows-amd64.zip"
-    sha256 "98200d359aa8c757b4c9bbdb1ffe763c7e43edf7ddd20edf2a175ea276f79a3c"
-
-    resource "agent-server" do
-      url "https://github.com/localup-dev/localup/releases/download/v0.0.1-beta13/localup-agent-server-windows-amd64.zip"
-      sha256 "148722bcd68aa8bdd99203fff92242c1ab8432d914dbd07ee841cec4dd59763e"
-    end
-
-    resource "relay" do
-      url "https://github.com/localup-dev/localup/releases/download/v0.0.1-beta13/localup-relay-windows-amd64.zip"
-      sha256 "e76cd6bcf34030d47368162531b4d91e273f2ca927287d02c8a7dfb7f75df153"
-    end
-  end
-
   def install
     bin.install "localup"
 
