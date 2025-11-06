@@ -67,11 +67,23 @@ class Localup < Formula
   def install
     bin.install "localup"
 
-    agent_server_dir = resource("agent-server").stage
-    bin.install agent_server_dir/"localup-agent-server"
+    # Install agent-server from resource
+    agent_server_archive = resource("agent-server").cached_download
+    if agent_server_archive.to_s.end_with?(".zip")
+      system "unzip", "-q", agent_server_archive, "-d", buildpath
+    else
+      system "tar", "-xzf", agent_server_archive, "-C", buildpath
+    end
+    bin.install buildpath/"localup-agent-server"
 
-    relay_dir = resource("relay").stage
-    bin.install relay_dir/"localup-relay"
+    # Install relay from resource
+    relay_archive = resource("relay").cached_download
+    if relay_archive.to_s.end_with?(".zip")
+      system "unzip", "-q", relay_archive, "-d", buildpath
+    else
+      system "tar", "-xzf", relay_archive, "-C", buildpath
+    end
+    bin.install buildpath/"localup-relay"
   end
 
   test do
