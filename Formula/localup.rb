@@ -1,26 +1,26 @@
 class Localup < Formula
   desc "LocalUp - Local development environment setup and management"
   homepage "https://github.com/localup-dev/localup"
-  version "0.1.4"
+  version "0.1.6"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/localup-dev/localup/releases/download/v0.1.4/localup-macos-arm64.tar.gz"
-      sha256 "a4abc16e34e51799a70440c0f1c953a3c99515b0145355bb88cc5f09f8059c78"
+      url "https://github.com/localup-dev/localup/releases/download/v0.1.6/localup-macos-arm64.tar.gz"
+      sha256 "deb6248b77081744482d33135c7fad3e4f0560186f83154b9fb0284344ed5e0d"
     else
-      url "https://github.com/localup-dev/localup/releases/download/v0.1.4/localup-macos-amd64.tar.gz"
-      sha256 "e1a2f3528cf76ffdb350cc2dc471ce787f5411c6beeb651bb34c598a0121b210"
+      url "https://github.com/localup-dev/localup/releases/download/v0.1.6/localup-macos-amd64.tar.gz"
+      sha256 "b3cff7ec916d6e003ba65274951c17bd52a08b9392dba40b91cea3c76d559c5b"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/localup-dev/localup/releases/download/v0.1.4/localup-linux-arm64.tar.gz"
-      sha256 "753b0af2caa1b68982491ad931bb8a2ae3fc27344c30d55ddb8deb67f92d7bac"
+      url "https://github.com/localup-dev/localup/releases/download/v0.1.6/localup-linux-arm64.tar.gz"
+      sha256 "4abf547120fe8d08de9d3a88a4876d6397d340b810141d9c4afea8d134c140d9"
     elsif Hardware::CPU.intel?
-      url "https://github.com/localup-dev/localup/releases/download/v0.1.4/localup-linux-amd64.tar.gz"
-      sha256 "c578370a611371fa3ca72782616322213d6dd8559a07a5651ed17e0f9294ed4f"
+      url "https://github.com/localup-dev/localup/releases/download/v0.1.6/localup-linux-amd64.tar.gz"
+      sha256 "3bbbf5db7441f31da00635563965c2276ff05ff58300c16f38ec9ee0e4b71ad4"
     end
   end
 
